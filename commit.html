@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <span class="logo">Phoenix</span>
+            </div>
+            <div class="nav-right">
+                <a href="index.html">HOME</a>
+                <a href="leave.html">REST</a>
+                <a href="advice.html">ADVICES</a>
+                <a href="blogs.html">BLOGS</a>
+                <a href="news.html">NEWS</a>
+                <a href="commit.html"><img src="icon1.png" alt="Register" style="width: 24px; height: 24px;"></a>
+                <link rel="stylesheet" href="home.css">
+            </div>
+        </nav>
+    </header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Messenger</title>
+    <link rel="stylesheet" href="commit.css">
+    <style>
+        /* CSS for the theme toggle button */
+        .theme-toggle-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .theme-toggle-btn i {
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chat-container">
+        <div class="messages" id="messages"></div>
+        <form id="messageForm" autocomplete="off">
+            <input type="text" id="messageInput" placeholder="Type a message" required class="centered-input">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <!-- Initial Prompt for Name and Avatar -->
+    <div class="setup-overlay" id="setupOverlay">
+        <h2>Welcome! Set Up Your Profile</h2>
+        <label for="nameInput">Name:</label>
+        <input type="text" id="nameInput" required>
+        <label for="avatarInput">Avatar (optional):</label>
+        <input type="file" id="avatarInput" accept="image/png, image/jpeg">
+        <button id="setupButton">Save</button>
+    </div>
+
+    <!-- Theme Toggle Button (moon/sun) -->
+    <button id="themeToggleButton" class="theme-toggle-btn">
+        <i id="themeIcon" class="fi fi-sun"></i>
+    </button>
+
+    <script src="commit.js"></script>
+    </div>
+    <button class="theme-toggle" id="themeToggleButton">
+        <i class="fas fa-moon" id="themeIcon"></i>
+    </button>
+
+    <script src="enter.js"></script>
+</body>
+
+</html>

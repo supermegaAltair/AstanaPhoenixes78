@@ -1,0 +1,135 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    opacity: 0;
+    transform: scale(0.7);
+    transform-origin: top center;
+    transition: opacity 1s ease-in-out, transform 1s ease;
+}
+
+/* Light Theme Styles */
+body.light-theme {
+    background-color: #ffffff;
+    color: #1a202c;
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
+    background-color: #121212;
+    color: #eaeaea;
+}
+
+.content-wrapper {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    transform: translateY(-100px);
+    transition: transform 1s ease-out;
+}
+
+.logo img {
+    width: 153px;
+    height: 135px;
+    transition: transform 1s ease;
+}
+
+h1 {
+    font-size: 72px;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+body.light-theme h1 {
+    color: #1a202c;
+}
+
+body.dark-theme h1 {
+    color: #ffffff;
+}
+
+p {
+    font-size: 27px;
+    color: #718096;
+    margin: 8px 0 45px;
+}
+
+.enter-button {
+    padding: 25px 45px;
+    width: 135%;
+    max-width: 300px;
+    border: none;
+    background-color: #1a202c;
+    color: #ffffff;
+    border-radius: 20px;
+    font-size: 27px;
+    cursor: pointer;
+    margin-top: 2px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.enter-button:hover {
+    background-color: #2d3748;
+    transform: scale(1.1);
+}
+
+body.dark-theme .enter-button {
+    background-color: #637083;
+    color: #f8f8f8;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.social-icons a img {
+    width: 36px;
+    height: 36px;
+}
+
+.social-icons a img.dark-icon {
+    display: none;
+}
+
+body.dark-theme .social-icons a img.light-icon {
+    display: none;
+}
+
+body.dark-theme .social-icons a img.dark-icon {
+    display: block;
+}
+
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px;
+    background-color: #1a202c;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: #2d3748;
+}
+
+/* Theme Icon Display */
+body.light-theme #themeIcon {
+    content: '\f186';
+    /* Font Awesome Moon icon */
+}
+
+body.dark-theme #themeIcon {
+    content: '\f185';
+    /* Font Awesome Sun icon */
+}

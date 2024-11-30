@@ -1,0 +1,55 @@
+/* Navigation Styles */
+header {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent background */
+    padding: 10px 0;
+    position: fixed;
+    /* Fix to top */
+    top: 0;
+    z-index: 1000;
+    /* Ensure it appears above other content */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    /* Centered layout */
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #e9eced;
+    /* Light blue for the logo */
+    font-weight: bold;
+}
+
+.nav-right a {
+    color: #fff;
+    /* White color for links */
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.nav-right a:hover {
+    color: #e9eeef;
+    /* Change color on hover */
+}
+
+.nav-right a img {
+    width: 50px;
+    /* Размер иконки */
+    height: 200px;
+    transition: transform 0.3s ease;
+    /* Плавное увеличение при наведении */
+}
+
+.nav-right a img:hover {
+    transform: scale(1.1);
+    /* Увеличение иконки при наведении */
+}

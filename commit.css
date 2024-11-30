@@ -1,0 +1,309 @@
+/* Убираем скролл страницы */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    /* Убираем скролл со страницы */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    font-family: Arial, sans-serif;
+}
+
+.theme-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #fff;
+    /* Белый фон для лучшей видимости */
+    border: 2px solid #000;
+    /* Черный контур для видимости */
+    padding: 10px;
+    /* Внутренние отступы */
+    font-size: 1.5em;
+    cursor: pointer;
+    color: inherit;
+    /* Цвет текста в зависимости от темы */
+    z-index: 1000;
+    /* Поверх других элементов */
+}
+
+
+/* Стиль контейнера чата */
+.chat-container {
+    width: 100%;
+    max-width: 500px;
+    height: 90vh;
+    /* Высота контейнера чата */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Контейнер для сообщений */
+.messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    /* Вертикальный скролл внутри контейнера сообщений */
+    display: flex;
+    flex-direction: column;
+    /* Сообщения идут сверху вниз */
+    gap: 10px;
+    word-wrap: break-word;
+    /* Перенос слов */
+    height: 100%;
+}
+
+/* Сообщения отправленные пользователем */
+.message.sent {
+    align-self: flex-end;
+}
+
+/* Сообщения, полученные от другого пользователя */
+.message.received {
+    align-self: flex-start;
+}
+
+/* Стиль сообщений */
+.message {
+    display: flex;
+    align-items: flex-start;
+    max-width: 100%;
+}
+
+.message.sent {
+    justify-content: flex-end;
+    /* Сообщения пользователя справа */
+}
+
+.message.received {
+    justify-content: flex-start;
+    /* Сообщения других пользователей слева */
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.message-content {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+}
+
+.message.sent .message-content {
+    background-color: #0078d4;
+    color: white;
+}
+
+.message.received .message-content {
+    background-color: #e0e0e0;
+    color: black;
+}
+
+.time {
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+    text-align: right;
+}
+
+/* Форма ввода сообщений */
+#messageForm {
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+
+#messageForm input.centered-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#messageForm button {
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#messageForm button:hover {
+    background-color: #005a9c;
+}
+
+/* Переопределение для первого экрана с настройкой */
+.setup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    visibility: hidden;
+    /* Прячем, если данные уже сохранены */
+}
+
+/* Стиль для времени сообщения */
+.message-meta {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+
+.time {
+    font-size: 11px;
+    color: #888;
+    margin-left: 10px;
+}
+
+#themeToggleButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: inherit;
+    /* Adjust color based on theme */
+}
+
+#themeToggleButton:focus {
+    outline: none;
+}
+
+/* Light Theme Styles */
+body.light-theme {
+    background-color: #ffffff;
+    color: #1a202c;
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
+    background-color: #121212;
+    color: #eaeaea;
+}
+
+
+.logo img {
+    width: 153px;
+    height: 135px;
+    transition: transform 1s ease;
+}
+
+h1 {
+    font-size: 72px;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+body.light-theme h1 {
+    color: #1a202c;
+}
+
+body.dark-theme h1 {
+    color: #ffffff;
+}
+
+p {
+    font-size: 27px;
+    color: #718096;
+    margin: 8px 0 45px;
+}
+
+.enter-button {
+    padding: 25px 45px;
+    width: 135%;
+    max-width: 300px;
+    border: none;
+    background-color: #1a202c;
+    color: #ffffff;
+    border-radius: 20px;
+    font-size: 27px;
+    cursor: pointer;
+    margin-top: 2px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.enter-button:hover {
+    background-color: #2d3748;
+    transform: scale(1.1);
+}
+
+body.dark-theme .enter-button {
+    background-color: #637083;
+    color: #f8f8f8;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.social-icons a img {
+    width: 36px;
+    height: 36px;
+}
+
+.social-icons a img.dark-icon {
+    display: none;
+}
+
+body.dark-theme .social-icons a img.light-icon {
+    display: none;
+}
+
+body.dark-theme .social-icons a img.dark-icon {
+    display: block;
+}
+
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px;
+    background-color: #1a202c;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: #2d3748;
+}
+
+/* Theme Icon Display */
+body.light-theme #themeIcon {
+    content: '\f186';
+    /* Font Awesome Moon icon */
+}
+
+body.dark-theme #themeIcon {
+    content: '\f185';
+    /* Font Awesome Sun icon */
+}
